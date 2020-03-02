@@ -1,4 +1,5 @@
 public class Rails {
+    private int railsLength;
     public String railsType;
 
     public String getRailsType(int railsCount, int railsDistance, boolean isElectricRails) {

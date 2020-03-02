@@ -16,14 +16,16 @@ public abstract class Train {
         String trainCarType;
     }
 
-    public int getMaxPassCountInCar () {
-        return maxPassCountInCar;
+    public int getMaxPassCount () {
+        return maxPassCountInCar = maxPassCountInCar * trainCarCount;
     }
     public void carryPass(int passCount, int maxPassCount) {
         if (passCount <= maxPassCount){
             trainCarry();
+            System.out.println("passCount = " + passCount + ", maxPassCount = " + maxPassCount);
         } else {
             trainStop();
+            System.out.println("passCount = " + passCount + ", maxPassCount = " + maxPassCount);
         }
     }
 
@@ -31,6 +33,7 @@ public abstract class Train {
         System.out.println("chuh chuh");
     }
     public void trainStop() {
+
         System.out.println("stop");
     }
 
