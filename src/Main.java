@@ -17,5 +17,7 @@ public class Main {
 
         String MyRails = new Rails().getRailsType (railsCount, railsDistance, isElectricRails);
 
+        myMonorail.beep();
+
     }
 }

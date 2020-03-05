@@ -1,2 +1,2 @@
-public class ChildTrain {
+public class ChildTrain extends NarrowGaugeTrain {
 }

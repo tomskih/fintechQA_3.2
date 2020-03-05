@@ -1,8 +1,9 @@
-public abstract class Train {
+public abstract class Train implements Beeping{
     private String id, model;
     private int maxPassCountInCar;
     private int trainCarCount;
     private int maxPassCount;
+    protected String beepType = "Tu-tu";
 
    // abstract void Run();
 
@@ -37,4 +38,8 @@ public abstract class Train {
         System.out.println("stop");
     }
 
+    @Override
+    public void beep() {
+        System.out.println(beepType);
+    }
 }

@@ -1,2 +1,2 @@
-public class PassengerTrain {
+public class PassengerTrain extends StandardTrain {
 }
