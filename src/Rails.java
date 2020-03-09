@@ -1,5 +1,5 @@
 public class Rails {
-    public String railsType;
+    private String railsType;
 
     public String getRailsType(int railsCount, int railsDistance, boolean isElectricRails) {
         if (railsCount == 1) {

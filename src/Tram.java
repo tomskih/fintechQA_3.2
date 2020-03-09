@@ -4,6 +4,14 @@ public class Tram extends PassengerTrain {
     public boolean isElectricRails = false;
     private int conductor;
 
+    public int getConductor() {
+        return conductor;
+    }
+
+    public void setConductor(int conductor) {
+        this.conductor = conductor;
+    }
+
     @Override
     public void beep() {
         System.out.println("Clang-clang");

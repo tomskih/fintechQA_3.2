@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public abstract class Train implements Beeping, Carring{
     private String id, model;
     public int maxPassCountInCar = 100;
@@ -7,21 +9,46 @@ public abstract class Train implements Beeping, Carring{
     public String beepType = "Tu-tu";
     public Rails rails;
 
-
     // abstract void Run();
 
 
-    public static class Locomotive {
-        private String[] engineType = {"Steam", "Diesel", "Electric"};
-        public int locomotiveCount = 2;
+    public static class Locomotive {    //внутренний класс - локомотив
+        private String engineType; // {"Steam", "Diesel", "Electric"};
 
-        public String[] getEngineType() {
+        public String getEngineType() {
             return engineType;
         }
+
+        public Locomotive (String engineType){
+            this.engineType = engineType;
+        }
+
     }
-    public static class TrainCar {
-        int trainCarCount = 5;
-        String trainCarType;
+    public static class TrainCar {  //внутренний класс - вагон
+        private int trainCarCount;
+        private String trainCarType;
+
+        public int getTrainCarCount() {
+            return trainCarCount;
+        }
+
+        public void setTrainCarCount(int trainCarCount) {
+            this.trainCarCount = trainCarCount;
+        }
+
+        public String getTrainCarType() {
+            return trainCarType;
+        }
+
+        public void setTrainCarType(String trainCarType) {
+            this.trainCarType = trainCarType;
+        }
+
+
+        public TrainCar(int trainCarCount,String trainCarType){
+            this.trainCarCount = trainCarCount;
+            this.trainCarType = trainCarType;
+        }
     }
 
     public int getMaxPassCount () {
@@ -38,6 +65,7 @@ public abstract class Train implements Beeping, Carring{
             System.out.println("passCount = " + passCount + ", maxPassCount = " + maxPassCount);
         }
     }
+
 
     public void carryCargo(int cargoWeight){
         System.out.println("Cargo weight = " + cargoWeight);

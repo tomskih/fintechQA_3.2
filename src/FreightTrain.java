@@ -10,6 +10,11 @@ public class FreightTrain extends Train {
     }
 
     @Override
+    public boolean isCarriesCargo() {
+        return true;
+    }
+
+    @Override
     public void carryCargo(int cargoWeight){
         System.out.println("Cargo weight = " + cargoWeight);
     }

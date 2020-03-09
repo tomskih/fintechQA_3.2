@@ -1,5 +1,12 @@
-public abstract class Station {
+public class Station {
     private String stationName;
 
-    public abstract void ticketSelling();
+    public void setStationName(String stationName) {
+        this.stationName = stationName;
+    }
+
+    public String getStationName() {
+        return stationName;
+    }
+
 }
