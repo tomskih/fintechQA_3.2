@@ -1,23 +1,31 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         //задаем число пассажиров, которое нужно перевезти
         int passCount = 200;
 
-        //параметры рельсов, чтобы определить тип дороги
-        int railsCount = 1;
-        int railsDistance = 1520;
-        boolean isElectricRails = false;
+        //создаем экземпляр класса одного из поездов
+        FreightTrain myTrain = new FreightTrain();
+        System.out.println(myTrain.getMaxPassCount());
+        myTrain.getMaxPassCount();
 
-        //создаем экземпляр класса Monorail
-        Monorail myMonorail = new Monorail();
-        myMonorail.getMaxPassCount();
-
-        myMonorail.carryPass(passCount, myMonorail.getMaxPassCount());
+        // собираем поезд из локомотива и вагонов
 
 
-        String MyRails = new Rails().getRailsType (railsCount, railsDistance, isElectricRails);
+        //определяем, по каким рельсам поедет поезд
+        Rails myRails = new Rails();
+        myRails.getRailsType(myTrain.railsCount, myTrain.railsDistance, myTrain.isElectricRails);
+        System.out.println(myRails.railsType);
 
-        myMonorail.beep();
+        //определяем, является ли поезд пассажирским и может ли ехать
+        if (myTrain.isCarriesPass()) {
+            myTrain.carryPass(passCount, myTrain.getMaxPassCount());
+        }
+        //просто сигналим
+        myTrain.beep();
+
+
 
     }
 }

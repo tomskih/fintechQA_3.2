@@ -1,24 +1,33 @@
-public abstract class Train implements Beeping{
+public abstract class Train implements Beeping, Carring{
     private String id, model;
-    private int maxPassCountInCar;
-    private int trainCarCount;
+    public int maxPassCountInCar = 100;
+    public int trainCarCount;
     private int maxPassCount;
-    protected String beepType = "Tu-tu";
+    public int cargoWeight;
+    public String beepType = "Tu-tu";
+    public Rails rails;
 
-   // abstract void Run();
+
+    // abstract void Run();
 
 
-    public class Locomotive {
-        String[] engineType = {"Steam", "Diesel", "Electric"};
-        int locomotiveCount = 2;
+    public static class Locomotive {
+        private String[] engineType = {"Steam", "Diesel", "Electric"};
+        public int locomotiveCount = 2;
+
+        public String[] getEngineType() {
+            return engineType;
+        }
     }
-    public class TrainCar {
+    public static class TrainCar {
         int trainCarCount = 5;
         String trainCarType;
     }
 
     public int getMaxPassCount () {
-        return maxPassCountInCar = maxPassCountInCar * trainCarCount;
+        System.out.println("trainCarCount = " + trainCarCount + ", maxPassCount1 = " + maxPassCount);
+        return maxPassCount = maxPassCountInCar * trainCarCount;
+
     }
     public void carryPass(int passCount, int maxPassCount) {
         if (passCount <= maxPassCount){
@@ -30,16 +39,19 @@ public abstract class Train implements Beeping{
         }
     }
 
+    public void carryCargo(int cargoWeight){
+        System.out.println("Cargo weight = " + cargoWeight);
+    }
+
     public void trainCarry() {
         System.out.println("chuh chuh");
     }
     public void trainStop() {
-
         System.out.println("stop");
     }
 
     @Override
     public void beep() {
-        System.out.println(beepType);
+        System.out.println("Tu-tu");
     }
 }

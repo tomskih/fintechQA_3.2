@@ -1,8 +1,16 @@
-public class Monorail extends Train {
-    private int maxPassCountInCar = 200;
-    private int trainCarCount = 6;
+public class Monorail extends PassengerTrain {
+    public int maxPassCountInCar = 200;
+    static int trainCarCount = 6;
+    public int railsCount = 1;
+    public int railsDistance = 0;
+    public boolean isElectricRails = false;
 
-    protected String beepType = "Clang-clang";
+
+    @Override
+    public void beep() {
+        System.out.println("Clang-clang");
+    }
+
 
 
 

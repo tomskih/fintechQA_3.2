@@ -1,4 +1,3 @@
-public interface Beeping {
+public interface Beeping{
     void beep();
-
 }

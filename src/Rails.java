@@ -1,17 +1,18 @@
 public class Rails {
-    private int railsLength;
     public String railsType;
 
     public String getRailsType(int railsCount, int railsDistance, boolean isElectricRails) {
         if (railsCount == 1) {
-            railsType = "monorail";
+            railsType = "mono";
         } else {
-            railsType = "double rail";
+            railsType = "double";
         }
-        if (railsDistance < 1520) {
-            railsType += " narrow-guage";
-        } else {
-            railsType += " standard";
+        if (railsDistance != 0) {
+            if (railsDistance < 1520) {
+                railsType += " narrow-guage";
+            } else {
+                railsType += " standard";
+            }
         }
         railsType += isElectricRails ? " electric rails" : " rails";
 
@@ -21,4 +22,5 @@ public class Rails {
     public void setRailsType (String railsType) {
         this.railsType = railsType;
     }
+
 }
